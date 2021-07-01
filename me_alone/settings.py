@@ -19,6 +19,9 @@ env_list = dict()
 local_env = open(os.path.join(BASE_DIR, '.env'))
 
 while True:
+    line = local_env.readline()
+    if not line:
+        break
     line = line.replace('\n', '')
     start = line.find('=')
     key = line[:start]
