@@ -1,5 +1,5 @@
 .STEFFIE_header_logo{
-    margin-bottom: 2rem; font-family: 'Chakra Petch', sans-serif; font-family: 'Changa', sans-serif;
+    margin: 2rem 0; font-family: 'Chakra Petch', sans-serif; font-family: 'Changa', sans-serif;
 }
 
 .STEFFIE_footer_logo{
@@ -12,4 +12,9 @@
 
 .STEFFIE_footer_button{
      margin-top:1.5rem;
+}
+
+.mw-500{
+    max-width: 500px;
+    padding: 1em 1.5rem;
 }
