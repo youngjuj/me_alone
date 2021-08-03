@@ -268,7 +268,7 @@ MagicGrid.prototype.listen = function listen () {
         }, 200);
       }
     });
-
+//희미한 글씨는 굳이 작성 no
     this.positionItems();
   }
   else { this.getReady(); }
@@ -283,10 +283,9 @@ let magicGrid = new MagicGrid({
 });
 
 var masonrys = document.getElementsByTagName("img")
-for(let i=0; i < masonrys; i++) {
+for(let i=0; i < masonrys.length; i++) {
   masonrys[i].addEventListener('load', function() {
     magicGrid.positionItems();
   }, false)
-}
-
+} //이미지 로드할 때마다 재배치
 magicGrid.listen();
