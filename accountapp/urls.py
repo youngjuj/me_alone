@@ -4,7 +4,6 @@ from accountapp.views import hello_world, AccountCreateView, AccountDetailView, 
 
 app_name = 'accountapp'
 
-
 urlpatterns = [
     path('hello_newworld/', hello_world, name="hello_world"),
 
