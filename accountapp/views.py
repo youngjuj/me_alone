@@ -18,10 +18,13 @@ def hello_world(request):
     # if request.user.is_authenticated:
     if request.method == "POST":
         temp = request.POST.get('input_text')
+
         new_hello_world = HelloWorld()
         new_hello_world.text = temp
         new_hello_world.save()
+
         return HttpResponseRedirect(reverse('accountapp:hello_world'))
+
     else:
         hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/hello_newworld.html',
