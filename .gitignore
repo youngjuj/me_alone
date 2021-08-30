@@ -84,3 +84,6 @@ __pycache__/
 media/
 
 staticfiles/
+
+me_alone_gcp
+me_alone_gcp.pub
