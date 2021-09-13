@@ -87,3 +87,7 @@ staticfiles/
 
 me_alone_gcp
 me_alone_gcp.pub
+
+Dockerfile
+
+nginx.conf
