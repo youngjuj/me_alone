@@ -14,7 +14,7 @@ services:
       - me_alone_media:/data/media/
 
   django:
-    image: me_alone_django:1
+    image: me_alone_django:3
     networks:
       - me_alone_network
     volumes:
