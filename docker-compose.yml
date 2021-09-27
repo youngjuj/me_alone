@@ -14,7 +14,7 @@ services:
       - me_alone_media:/data/media/
 
   django:
-    image: me_alone_django:4
+    image: me_alone_django:5
     networks:
       - me_alone_network
     volumes:
@@ -36,10 +36,10 @@ services:
       - MARIADB_USER
       - MARIADB_PASSWORD
     environment:
-      MARIADB_ROOT_PASSWORD: password1234
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
       MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: password1234
+      MARIADB_USER_FILE: /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE: /run/secrets/MARIADB_PASSWORD
 
 networks:
   me_alone_network:
