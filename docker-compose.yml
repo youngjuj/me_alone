@@ -22,6 +22,8 @@ services:
       - me_alone_media:/home/me_alone/media/
     secrets:
       - DjangoSecretKey
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
@@ -29,6 +31,10 @@ services:
       - me_alone_network
     volumes:
       - me_alone_mariadb:/var/lib/mysql
+    secrets:
+      - MARIADB_ROOT_PASSWORD
+      - MARIADB_USER
+      - MARIADB_PASSWORD
     environment:
       MARIADB_ROOT_PASSWORD: password1234
       MARIADB_DATABASE: django
@@ -45,4 +51,10 @@ volumes:
 
 secrets:
   DjangoSecretKey:
+    external: true
+  MARIADB_ROOT_PASSWORD:
+    external: true
+  MARIADB_USER:
+    external: true
+  MARIADB_PASSWORD:
     external: true
