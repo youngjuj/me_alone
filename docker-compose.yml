@@ -16,6 +16,15 @@ services:
       - me_alone_static:/data/static/
       - me_alone_media:/data/media/
       - me_alone_log:/var/log/nginx/
+    secrets:
+      - NGINX_AUTH
+  goaccess:
+    image: allinurl/goaccess:1.5.1
+    ports:
+      - 7890:7890
+    volumes:
+      - me_alone_log:/var/log/nginx/
+    command: /var/log/nginx/me_alone_access.log -o /var/log/nginx/report.html --real-time-html --log-format COMBINED
 
   django:
     image: me_alone_django:5
@@ -62,4 +71,6 @@ secrets:
   MARIADB_USER:
     external: true
   MARIADB_PASSWORD:
+    external: true
+  NGINX_AUTH:
     external: true
