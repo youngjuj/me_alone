@@ -5,13 +5,17 @@ services:
   nginx:
     image: nginx:1.19.5
     ports:
-      - 80:80
+      - mode: host
+        protocol: tcp
+        target: 80
+        published: 80
     networks:
       - me_alone_network
     volumes:
       - /home/alti100/nginx.conf:/etc/nginx/nginx.conf
       - me_alone_static:/data/static/
       - me_alone_media:/data/media/
+      - me_alone_log:/var/log/nginx/
 
   django:
     image: me_alone_django:5
@@ -48,6 +52,7 @@ volumes:
   me_alone_static:
   me_alone_media:
   me_alone_mariadb:
+  me_alone_log:
 
 secrets:
   DjangoSecretKey:
